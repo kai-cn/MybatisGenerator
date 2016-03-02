@@ -2,8 +2,8 @@
 
 ## generatorConfig.xml
 
-Change /Users/TimChen with your location
-Change BaiwangTradeshift with your project folder
+1. Change `/Users/TimChen` with your location
+2. Change `BaiwangTradeshift` with your project folder
 
 ## ***Mapper.xml
 
