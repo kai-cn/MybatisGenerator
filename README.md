@@ -17,3 +17,8 @@
 1. Replace `Object` into `UUID` if primary key is UUID type
 2. add `@Param("id")` if parameter is UUID.  like
     `int deleteByPrimaryKey(@Param("id") UUID id);`
+
+## Entity
+remove  `createTime` `updateTime`  `createBy` `updateBy`
+instead extends BaseEntity
+
