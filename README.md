@@ -9,7 +9,7 @@
 
 1. replace `jdbcType="OTHER"` with `typeHandler="UUIDTypeHandler"`
 2. replace `java.lang.Object` with `UUID`
-3. replace `jdbcType=OTHER` with `javaType=UUID,jdbcType=OTHER,typeHandler=UUIDTypeHandler`
+3. replace `jdbcType=OTHER` with `typeHandler=UUIDTypeHandler`
 
 
 ## ***Mapper.java
