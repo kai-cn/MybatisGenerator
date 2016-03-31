@@ -17,7 +17,7 @@
    </table>
 ```
 ## 2#Run the generator command.
-    ` mvn mybatis-generator:generate`
+    `mvn mybatis-generator:generate`
 ## 3#Modify the generated **Mapper.java file.
 1. add `@Param("id")` if parameter is UUID.  like
     `int deleteByPrimaryKey(@Param("id") UUID id);`

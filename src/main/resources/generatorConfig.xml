@@ -5,7 +5,7 @@
 
 <generatorConfiguration>
     <classPathEntry
-            location="/Users/TimChen/.m2/repository/org/postgresql/postgresql/9.4-1201-jdbc41/postgresql-9.4-1201-jdbc41.jar"/>
+            location="/Users/renchangqing/.m2/repository/org/postgresql/postgresql/9.4-1201-jdbc41/postgresql-9.4-1201-jdbc41.jar"/>
     <context id="my" targetRuntime="MyBatis3">
         <commentGenerator>
             <property name="suppressDate" value="false"/>
@@ -15,31 +15,36 @@
         <jdbcConnection driverClass="org.postgresql.Driver"
                         connectionURL="jdbc:postgresql://localhost/tenant_document" userId="porta"
                         password="porta"/>
-
-        <javaModelGenerator targetPackage="com.bwts.customer.entity.document"
-                            targetProject="/Users/TimChen/BaiwangTradeshift/MybatisGenerator/src/main/java">
+        <javaModelGenerator targetPackage="com.bwts.doc.core.entity.security"
+                            targetProject="/Users/renchangqing/Tradeshift/TenantDocumentService/TenantDocumentCore/src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
-        <sqlMapGenerator targetPackage="com.bwts.customer.entity.document"
-                         targetProject="/Users/TimChen/BaiwangTradeshift/MybatisGenerator/src/main/java">
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="/Users/renchangqing/Tradeshift/TenantDocumentService/TenantDocumentCore/src/main/resources/mybatis">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
 
-        <javaClientGenerator targetPackage="com.bwts.customer.dao.mapper"
-                             targetProject="/Users/TimChen/BaiwangTradeshift/MybatisGenerator/src/main/java" type="XMLMAPPER">
+        <javaClientGenerator targetPackage="com.bwts.doc.core.dao.mapper"
+                             targetProject="/Users/renchangqing/Tradeshift/TenantDocumentService/TenantDocumentCore/src/main/java" type="XMLMAPPER">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-        <!--<table tableName="T_FEE_AGTBILL" domainObjectName="FeeAgentBill"
+        <table tableName="tokenkey_tenant_access" domainObjectName="TokenkeyTenantAccess"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false"/>-->
+               selectByExampleQueryId="false" >
+            <columnOverride column="tenant_id" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="token_key" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="expire_time" javaType="java.sql.Timestamp"/>
 
-        <table tableName="document_component" domainObjectName="DocumentComponent"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false" />
+            <columnOverride column="create_by" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="update_by" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="create_time" javaType="java.sql.Timestamp"/>
+            <columnOverride column="update_time" javaType="java.sql.Timestamp"/>
+
+        </table>
     </context>
+
 </generatorConfiguration>
