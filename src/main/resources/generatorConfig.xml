@@ -13,38 +13,268 @@
         </commentGenerator>
 
         <jdbcConnection driverClass="org.postgresql.Driver"
-                        connectionURL="jdbc:postgresql://localhost/tenant_document" userId="porta"
+                        connectionURL="jdbc:postgresql://localhost/selfbilledinvoicelines" userId="porta"
                         password="porta"/>
-        <javaModelGenerator targetPackage="com.bwts.doc.core.entity.security"
-                            targetProject="/Users/renchangqing/Tradeshift/TenantDocumentService/TenantDocumentCore/src/main/java">
-            <property name="enableSubPackages" value="true"/>
+        <javaModelGenerator targetPackage="com.tradeshift.cnbilling.entity"
+                            targetProject="/Users/renchangqing/GLOBALCN/tradeshift-cnbilling/src/main/java">
+            <property name="enableSubPackages" value="false"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <sqlMapGenerator targetPackage="mapper"
-                         targetProject="/Users/renchangqing/Tradeshift/TenantDocumentService/TenantDocumentCore/src/main/resources/mybatis">
-            <property name="enableSubPackages" value="true"/>
+                         targetProject="/Users/renchangqing/GLOBALCN/tradeshift-cnbilling/src/main/resources/db/mybatis">
+            <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
 
-        <javaClientGenerator targetPackage="com.bwts.doc.core.dao.mapper"
-                             targetProject="/Users/renchangqing/Tradeshift/TenantDocumentService/TenantDocumentCore/src/main/java" type="XMLMAPPER">
-            <property name="enableSubPackages" value="true"/>
+        <javaClientGenerator targetPackage="com.tradeshift.cnbilling.dao.mapper"
+                             targetProject="/Users/renchangqing/GLOBALCN/tradeshift-cnbilling/src/main/java" type="XMLMAPPER">
+            <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
-        <table tableName="tokenkey_tenant_access" domainObjectName="TokenkeyTenantAccess"
+        <!--<table tableName="disputedline" domainObjectName="DisputedLine"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false" >-->
+
+
+            <!--<columnOverride column="disputedlineid" property="disputedLineId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />-->
+            <!--<columnOverride column="proformaid" property="proformaId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />-->
+            <!--<columnOverride column="documentid" property="documentId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />-->
+            <!--<columnOverride column="documentlinedisplayid" property="documentLineDisplayId" />-->
+            <!--<columnOverride column="originalprice" property="originalPrice" />-->
+            <!--<columnOverride column="latestprice" property="latestPrice" />-->
+            <!--<columnOverride column="status" property="status" />-->
+            <!--<columnOverride column="referencedocumentnumber" property="referenceDocumentNumber" />-->
+            <!--<columnOverride column="referencedocumentlinedisplayid" property="referenceDocumentLineDisplayId" />-->
+
+            <!--<columnOverride column="pendingtenantid" property="pendingTenantId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />-->
+            <!--<columnOverride column="otherparttenantid" property="otherpartTenantId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />-->
+            <!--<columnOverride column="otherpartuserid" property="otherpartUserId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />-->
+            <!--<columnOverride column="tenantid" property="tenantId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />-->
+            <!--<columnOverride column="createby" property="createBy" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />-->
+            <!--<columnOverride column="updateby" property="updateBy" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />-->
+            <!--<columnOverride column="createtime" property="createTime" javaType="java.sql.Timestamp"/>-->
+            <!--<columnOverride column="updatetime" property="updateTime" javaType="java.sql.Timestamp"/>-->
+
+        <!--</table>-->
+
+        <!--<table tableName="proposedlog" domainObjectName="ProposedLog"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false" >-->
+            <!--<columnOverride column="disputedlineid" property="disputedLineId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />-->
+            <!--<columnOverride column="otherparttenantid" property="otherpartTenantId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />-->
+            <!--<columnOverride column="otherpartuserid" property="otherpartUserId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />-->
+            <!--<columnOverride column="previousprice" property="previousPrice" />-->
+            <!--<columnOverride column="proposedprice" property="proposedPrice" />-->
+            <!--<columnOverride column="proposedbyothers" property="proposedByOthers" />-->
+
+            <!--<columnOverride column="tenantid" property="tenantId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />-->
+            <!--<columnOverride column="createby" property="createBy" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />-->
+            <!--<columnOverride column="updateby" property="updateBy" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />-->
+            <!--<columnOverride column="createtime" property="createTime" javaType="java.sql.Timestamp"/>-->
+            <!--<columnOverride column="updatetime" property="updateTime" javaType="java.sql.Timestamp"/>-->
+
+        <!--</table>-->
+
+        <!--<table tableName="referenceprice" domainObjectName="ReferencePrice"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false"-->
+               <!--enableDeleteByExample="false" enableSelectByExample="false"-->
+               <!--selectByExampleQueryId="false" >-->
+            <!--<columnOverride column="referencepriceid" property="referencePriceId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />-->
+            <!--<columnOverride column="documentid" property="documentId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />-->
+            <!--<columnOverride column="documentnumder" property="documentNumder" />-->
+            <!--<columnOverride column="documentlinedisplayid" property="documentLineDisplayId" />-->
+            <!--<columnOverride column="proposedunitprice" property="proposedUnitPrice" />-->
+            <!--<columnOverride column="originalunitprice" property="originalUnitPrice" />-->
+
+            <!--<columnOverride column="tenantid" property="tenantId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />-->
+            <!--<columnOverride column="userid" property="userId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />-->
+            <!--<columnOverride column="createtime" property="createTime" javaType="java.sql.Timestamp"/>-->
+            <!--<columnOverride column="updatetime" property="updateTime" javaType="java.sql.Timestamp"/>-->
+    <!--</table>-->
+
+        <table tableName="source" domainObjectName="Source"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false" >
-            <columnOverride column="tenant_id" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
-            <columnOverride column="token_key" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
-            <columnOverride column="expire_time" javaType="java.sql.Timestamp"/>
+            <columnOverride column="sourceid" property="sourceId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="documentid" property="documentId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="sourcenumber" property="sourceNumber" />
+            <columnOverride column="type" property="type" />
+            <columnOverride column="filetype" property="fileType" />
+            <columnOverride column="documenttype" property="documentType" />
+            <columnOverride column="currencycode" property="currencycode" />
 
-            <columnOverride column="create_by" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
-            <columnOverride column="update_by" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
-            <columnOverride column="create_time" javaType="java.sql.Timestamp"/>
-            <columnOverride column="update_time" javaType="java.sql.Timestamp"/>
-
+            <columnOverride column="otherparttenantid" property="otherpartTenantId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="otherpartuserid" property="otherpartUserId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="tenantid" property="tenantId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="userid" property="userId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="createdby" property="createdBy" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="updatedby" property="updatedBy" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="createdtime" property="createdTime" javaType="java.sql.Timestamp"/>
+            <columnOverride column="updatedtime" property="updatedTime" javaType="java.sql.Timestamp"/>
         </table>
+
+
+        <table tableName="sourceline" domainObjectName="SourceLine"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" >
+            <columnOverride column="sourcelineid" property="sourceLineId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="sourceid" property="sourceId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="linenumber" property="lineNumber" />
+
+            <columnOverride column="itemname" property="itemName" />
+            <columnOverride column="modelname" property="modelName" />
+            <columnOverride column="materialcode" property="materialCode" />
+            <columnOverride column="materialname" property="materialName" />
+            <columnOverride column="commoditycode" property="commodityCode" />
+
+
+            <columnOverride column="price" property="price" />
+            <columnOverride column="quantity" property="quantity" />
+            <columnOverride column="unitcode" property="unitCode" />
+            <columnOverride column="taxrate" property="taxRate" />
+            <columnOverride column="totalprice" property="totalPrice" />
+            <columnOverride column="totaltax" property="totalTax" />
+
+            <columnOverride column="alongwithkey" property="alongwithKey" />
+            <columnOverride column="mergekey" property="mergeKey" />
+            <columnOverride column="groupkey" property="groupKey" />
+            <columnOverride column="identifierkey" property="identifierKey" />
+            <columnOverride column="mergestrategy" property="mergeStrategy" />
+            <columnOverride column="occupied" property="occupied" />
+
+            <columnOverride column="tenantid" property="tenantId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="userid" property="userId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="createdby" property="createdBy" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="updatedby" property="updatedBy" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="createdtime" property="createdTime" javaType="java.sql.Timestamp"/>
+            <columnOverride column="updatedtime" property="updatedTime" javaType="java.sql.Timestamp"/>
+        </table>
+
+        <table tableName="sourcelinemetadata" domainObjectName="SourceLineMetadata"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" >
+            <columnOverride column="id" property="id" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="sourcelineid" property="sourceLineId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+        </table>
+
+
+        <table tableName="mockfapiao" domainObjectName="MockFapiao"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" >
+            <columnOverride column="mockfapiaoid" property="mockFapiaoId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="mockfapiaoimmutableid" property="mockFapiaoImmutableId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="mockfapiaonumber" property="mockFapiaoNumber" />
+
+            <columnOverride column="transitionstatus" property="transitionStatus" />
+            <columnOverride column="issuestatus" property="issueStatus" />
+            <columnOverride column="inputstatus" property="inputStatus" />
+            <columnOverride column="replaced" property="replaced" />
+
+            <columnOverride column="groupkey" property="groupKey" />
+            <columnOverride column="totalprice" property="totalPrice" />
+            <columnOverride column="totaltax" property="totalTax" />
+            <columnOverride column="fapiaonumber" property="fapiaoNumber" />
+            <columnOverride column="fapiaocode" property="fapiaoCode" />
+            <columnOverride column="fapiaoissuestatus" property="fapiaoIssueStatus" />
+            <columnOverride column="type" property="type" />
+
+            <columnOverride column="otherparttenantid" property="otherpartTenantId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="otherpartuserid" property="otherpartUserId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="tenantid" property="tenantId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="userid" property="userId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="createdby" property="createdBy" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="updatedby" property="updatedBy" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="createdtime" property="createdTime" javaType="java.sql.Timestamp"/>
+            <columnOverride column="updatedtime" property="updatedTime" javaType="java.sql.Timestamp"/>
+        </table>
+
+        <table tableName="proformalinemetadata" domainObjectName="ProformaLineMetadata"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" >
+            <columnOverride column="id" property="id" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="proformalineid" property="proformaLineId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+        </table>
+
+        <table tableName="proformamockfapiaorel" domainObjectName="ProformaMockFapiaoRel"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" >
+            <columnOverride column="proformaid" property="proformaId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="mockfapiaoid" property="mockFapiaoId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+
+            <columnOverride column="deleted" property="deleted" />
+            <columnOverride column="flipped" property="flipped" />
+
+            <columnOverride column="tenantid" property="tenantId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="userid" property="userId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="createdby" property="createdBy" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="updatedby" property="updatedBy" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="createdtime" property="createdTime" javaType="java.sql.Timestamp"/>
+            <columnOverride column="updatedtime" property="updatedTime" javaType="java.sql.Timestamp"/>
+        </table>
+
+        <table tableName="mockfapiaoline" domainObjectName="MockFapiaoLine"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" >
+            <columnOverride column="id" property="id" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="immutableid" property="immutableId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="mockfapiaoid" property="mockFapiaoId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="linenumber" property="lineNumber" />
+
+            <columnOverride column="itemname" property="itemName" />
+            <columnOverride column="modelname" property="modelName" />
+            <columnOverride column="materialcode" property="materialCode" />
+            <columnOverride column="materialname" property="materialName" />
+            <columnOverride column="commoditycode" property="commodityCode" />
+
+            <columnOverride column="price" property="price" />
+            <columnOverride column="quantity" property="quantity" />
+            <columnOverride column="unitcode" property="unitCode" />
+            <columnOverride column="taxrate" property="taxRate" />
+            <columnOverride column="totalprice" property="totalPrice" />
+            <columnOverride column="totaltax" property="totalTax" />
+
+            <columnOverride column="mergekey" property="mergeKey" />
+            <columnOverride column="deviation" property="deviation" />
+
+            <columnOverride column="tenantid" property="tenantId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="userid" property="userId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="createdby" property="createdBy" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="updatedby" property="updatedBy" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="createdtime" property="createdTime" javaType="java.sql.Timestamp"/>
+            <columnOverride column="updatedtime" property="updatedTime" javaType="java.sql.Timestamp"/>
+        </table>
+
+        <table tableName="proformalinemockfapiaolinerel" domainObjectName="ProformaLineMockFapiaoLineRel"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false"
+               selectByExampleQueryId="false" >
+            <columnOverride column="proformalineid" property="proformaLineId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="mockfapiaoid" property="mockFapiaoId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="mockfapiaolineid" property="mockFapiaoLineId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+
+            <columnOverride column="identifierkey" property="identifierKey" />
+            <columnOverride column="composetype" property="composeType" />
+            <columnOverride column="composequantity" property="composeQuantity" />
+            <columnOverride column="deleted" property="deleted" />
+
+            <columnOverride column="tenantid" property="tenantId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="userid" property="userId" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="createdby" property="createdBy" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="updatedby" property="updatedBy" javaType="java.util.UUID" typeHandler="UUIDTypeHandler" />
+            <columnOverride column="createdtime" property="createdTime" javaType="java.sql.Timestamp"/>
+            <columnOverride column="updatedtime" property="updatedTime" javaType="java.sql.Timestamp"/>
+        </table>
+
+
     </context>
 
 </generatorConfiguration>
